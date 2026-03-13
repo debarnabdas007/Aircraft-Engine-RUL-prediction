@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About AEGIS AERO</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; margin: 0; display: flex; flex-direction: column; min-height: 100vh;">
+
+    <nav style="display: flex; justify-content: space-between; background-color: #1e1e1e; padding: 15px 30px; border-bottom: 1px solid #444444;">
+        <div>
+            <a href="/" style="color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold;">Home</a>
+        </div>
+        <div>
+            <a href="/about" style="color: #cccccc; margin-left: 20px; text-decoration: none; font-size: 18px;">About Project</a>
+            <a href="/contact" style="color: #cccccc; margin-left: 20px; text-decoration: none; font-size: 18px;">Contact Us</a>
+        </div>
+    </nav>
+
+    <div style="flex: 1; max-width: 800px; margin: auto; margin-top: 50px; margin-bottom: 50px; background-color: #1e1e1e; padding: 30px; border-radius: 8px; line-height: 1.6; border: 1px solid #333333;">
+        <h1 style="text-align: center; color: #ffffff; margin-bottom: 30px;">About AEGIS AERO</h1>
+        
+        <p style="color: #cccccc;"><strong>AEGIS AERO</strong> is an end-to-end Machine Learning web application designed to solve a critical problem in the aviation industry: Predictive Maintenance.</p>
+
+        <h3 style="color: #ffffff;">The Problem</h3>
+        <p style="color: #cccccc;">Aircraft engines degrade over time. If an airline replaces parts too early, they waste millions of dollars. If they wait too long, it results in catastrophic failure. The goal is to predict the exact <strong>Remaining Useful Life (RUL)</strong> of an engine based on live sensor readings.</p>
+
+        <h3 style="color: #ffffff;">The Data & AI Architecture</h3>
+        <p style="color: #cccccc;">This project uses the famous NASA Turbofan Engine Degradation Simulation dataset. The intelligence behind this application includes:</p>
+        <ul style="color: #cccccc;">
+            <li><strong>Advanced Feature Engineering:</strong> Converting raw sensor data into 5-cycle rolling averages and standard deviations to capture the degradation trend over time.</li>
+            <li><strong>Automated MLOps Pipeline:</strong> A fully modular architecture including Data Ingestion, Transformation, and Model Training components.</li>
+            <li><strong>Best Model:</strong> A Random Forest Regressor optimized to catch complex non-linear sensor patterns.</li>
+        </ul>
+
+        <h3 style="color: #ffffff;">How it Works</h3>
+        <p style="color: #cccccc;">A mechanic enters the current readings from 10 crucial engine sensors (like temperature, pressure, and bypass ratio) into the web form. The Prediction Pipeline dynamically generates the required time-series features in a steady state and feeds them to the frozen AI model to generate an instant RUL prediction.</p>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: #666666; font-size: 14px; background-color: #1e1e1e; border-top: 1px solid #333333;">
+        &copy; 2026 Debarnab Das. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

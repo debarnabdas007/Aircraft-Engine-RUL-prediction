@@ -1,0 +1,32 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment 
+aircraft22_venv/
+venv/
+env/
+ENV/
+
+# Environment Variables
+.env
+
+# IDE settings
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+.ipynb_checkpoints
+
+# Data (Don't push raw heavy datasets to GitHub)
+data/
+
+# NOTE: artifacts/ and *.pkl are INTENTIONALLY NOT IGNORED 
+# so Render has access to the trained model and preprocessor!

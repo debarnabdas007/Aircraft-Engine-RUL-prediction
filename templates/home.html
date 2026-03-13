@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict RUL</title>
+</head>
+<body style="font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; margin: 0; display: flex; flex-direction: column; min-height: 100vh;">
+
+    <nav style="display: flex; justify-content: space-between; background-color: #1e1e1e; padding: 15px 30px; border-bottom: 1px solid #444444;">
+        <div>
+            <a href="/" style="color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold;">Home</a>
+        </div>
+        <div>
+            <a href="/about" style="color: #cccccc; margin-left: 20px; text-decoration: none; font-size: 18px;">About Project</a>
+            <a href="/contact" style="color: #cccccc; margin-left: 20px; text-decoration: none; font-size: 18px;">Contact Us</a>
+        </div>
+    </nav>
+
+    <div style="flex: 1;">
+        <h2 style="text-align: center; margin-top: 30px; color: #cccccc;">Enter Live Sensor Data</h2>
+
+        {% if results %}
+            <div style="text-align: center; background-color: #1e1e1e; color: #ffffff; padding: 15px; border-radius: 5px; max-width: 400px; margin: auto; margin-bottom: 20px; border: 1px solid #666666;">
+                <h2 style="color: #cccccc;">Predicted Remaining Life:</h2>
+                <h1 style="margin: 0;">{{ results }} Flights</h1>
+            </div>
+        {% endif %}
+
+        <form action="/predictdata" method="POST" style="max-width: 400px; margin: auto; background-color: #1e1e1e; padding: 25px; border-radius: 8px; border: 1px solid #333333;">
+            
+            <label style="color: #aaaaaa;">Sensor 2 (Temp): Range 641.21 - 644.53</label><br>
+            <input type="number" step="any" name="s_2" min="641.21" max="644.53" placeholder="642.68" required style="width: 95%; margin-bottom: 10px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <label style="color: #aaaaaa;">Sensor 3 (Temp): Range 1571.04 - 1616.91</label><br>
+            <input type="number" step="any" name="s_3" min="1571.04" max="1616.91" placeholder="1590.52" required style="width: 95%; margin-bottom: 10px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <label style="color: #aaaaaa;">Sensor 4 (Temp): Range 1382.25 - 1441.49</label><br>
+            <input type="number" step="any" name="s_4" min="1382.25" max="1441.49" placeholder="1408.93" required style="width: 95%; margin-bottom: 10px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <label style="color: #aaaaaa;">Sensor 7 (Pressure): Range 549.85 - 556.06</label><br>
+            <input type="number" step="any" name="s_7" min="549.85" max="556.06" placeholder="553.36" required style="width: 95%; margin-bottom: 10px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <label style="color: #aaaaaa;">Sensor 11 (Pressure): Range 46.85 - 48.53</label><br>
+            <input type="number" step="any" name="s_11" min="46.85" max="48.53" placeholder="47.54" required style="width: 95%; margin-bottom: 10px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <label style="color: #aaaaaa;">Sensor 12 (Speed): Range 518.69 - 523.38</label><br>
+            <input type="number" step="any" name="s_12" min="518.69" max="523.38" placeholder="521.41" required style="width: 95%; margin-bottom: 10px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <label style="color: #aaaaaa;">Sensor 15 (Bypass Ratio): Range 8.32 - 8.59</label><br>
+            <input type="number" step="any" name="s_15" min="8.32" max="8.59" placeholder="8.44" required style="width: 95%; margin-bottom: 10px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <label style="color: #aaaaaa;">Sensor 17 (Enthalpy): Range 388.00 - 400.00</label><br>
+            <input type="number" step="any" name="s_17" min="388" max="400" placeholder="393.21" required style="width: 95%; margin-bottom: 10px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <label style="color: #aaaaaa;">Sensor 20 (Enthalpy): Range 38.14 - 39.43</label><br>
+            <input type="number" step="any" name="s_20" min="38.14" max="39.43" placeholder="38.81" required style="width: 95%; margin-bottom: 10px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <label style="color: #aaaaaa;">Sensor 21 (Enthalpy): Range 22.89 - 23.62</label><br>
+            <input type="number" step="any" name="s_21" min="22.89" max="23.62" placeholder="23.28" required style="width: 95%; margin-bottom: 20px; padding: 5px; background-color: #121212; color: #ffffff; border: 1px solid #444444;"><br>
+
+            <button type="submit" style="width: 100%; padding: 12px; background-color: #2a2a2a; color: #ffffff; border: 1px solid #666666; font-size: 16px; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                Predict Remaining Flights
+            </button>
+        </form>
+        <br><br>
+    </div>
+
+    <footer style="text-align: center; padding: 20px; color: #666666; font-size: 14px; background-color: #1e1e1e; border-top: 1px solid #333333;">
+        &copy; 2026 Debarnab Das. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
